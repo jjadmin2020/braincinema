@@ -5,6 +5,7 @@ package com.main.braincinema;
  */
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello BrainCinema");
+        System.out.println("Hello World");
+        System.out.println("Hello Java!!!!!");
     }
 }
