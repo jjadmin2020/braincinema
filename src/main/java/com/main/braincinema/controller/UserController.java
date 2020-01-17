@@ -29,4 +29,13 @@ public class UserController {
         return true;
     }
 
+    public boolean updateUser() {
+        User user = new User();
+        System.out.println("input user name: ");
+        Scanner scanner = new Scanner(System.in);
+        user.setFirstName(scanner.nextLine());
+        return true;
+    }
+
+
 }
