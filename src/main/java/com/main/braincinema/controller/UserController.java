@@ -1,8 +1,8 @@
 package com.main.braincinema.controller;
 
 import com.main.braincinema.entity.User;
-
 import java.util.Scanner;
+
 
 public class UserController {
     public boolean addUser() {
