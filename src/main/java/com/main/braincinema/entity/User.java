@@ -1,7 +1,6 @@
 package com.main.braincinema.entity;
 
 import lombok.Data;
-
 import java.util.Date;
 
 @Data
