@@ -14,10 +14,10 @@ public class Seat {
     private boolean isOccupied = false;
     private boolean isReadyToUse = true;
 
-    public Seat(int rank,int nubmer,double cost,String type){
+    public Seat(int rank,int number,double cost,String type){
         user = new User();
         this.rank = rank;
-        this.number = nubmer;
+        this.number = number;
         this.cost = cost;
         this.type = type;
         this.unicNumber = this.rank * 1000 + this.number;
