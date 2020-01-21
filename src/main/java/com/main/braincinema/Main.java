@@ -5,9 +5,7 @@ import com.main.braincinema.controller.SeatController;
 import com.main.braincinema.entity.Seat;
 import com.main.braincinema.entity.*;
 
-/**
- * Created by OFedorenko on 01/16/20 braincinema.
- */
+
 public class Main {
     public static void main(String[] args) {
         Auditorium auditorium = new Auditorium("2", 7, 7);
