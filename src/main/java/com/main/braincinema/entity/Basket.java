@@ -14,6 +14,10 @@ public class Basket {
     private BigDecimal cost;
     private BigDecimal totalCost;
 
-
-    Basket() {}
+    public Basket(String filmName, int ranks, int placeInRank, BigDecimal cost) {
+        this.filmName = filmName;
+        this.ranks = ranks;
+        this.placeInRank = placeInRank;
+        this.cost = cost;
+    }
 }
