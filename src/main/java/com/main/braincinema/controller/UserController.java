@@ -6,31 +6,31 @@ import java.util.Scanner;
 public class UserController {
     public boolean addUser() {
         User user = new User();
-        System.out.println("Введите Ваше имя: ");
+        System.out.println("Input first name: ");
         Scanner scanner = new Scanner(System.in);
         user.setFirstName(scanner.nextLine());
 
 
-        System.out.println("Введите Вашу фамилию: ");
+        System.out.println("Input last name: ");
         user.setLastName(scanner.nextLine());
 
-        System.out.println("Введите дату рождения: ");
+        System.out.println("Input date of birth: ");
         user.setDateOfBirth(scanner.nextLine());
 
-        System.out.println("Введите Ваш город: ");
+        System.out.println("Input city: ");
         user.setCity(scanner.nextLine());
 
-        System.out.println("Введите номер телефона: ");
+        System.out.println("Input phone number: ");
         if (scanner.hasNextInt()) {
             user.setPhoneNumber(scanner.nextLine());
         } else {
             System.out.println("Вы ввели не цифры ");
         }
 
-        System.out.println("Введите  e-mail: ");
+        System.out.println("Input  e-mail: ");
         user.setEMail(scanner.nextLine());
 
-        System.out.println("Придумайте пароль: ");
+        System.out.println("Input password: ");
         user.setPassword(scanner.nextLine());
 
         System.out.println("Сверте Ваши данные" + user.toString());
@@ -39,7 +39,7 @@ public class UserController {
 
     public boolean deleteUser() {
         User user = new User();
-        System.out.println("Введите Вашу фамилию: ");
+        System.out.println("Input first name: ");
         Scanner scanner = new Scanner(System.in);
         user.setFirstName(scanner.nextLine());
         return true;
@@ -47,7 +47,7 @@ public class UserController {
 
     public boolean findUser() {
         User user = new User();
-        System.out.println("Введите Вашу фамилию: ");
+        System.out.println("Input first name: ");
         Scanner scanner = new Scanner(System.in);
         user.setFirstName(scanner.nextLine());
         return true;
@@ -55,7 +55,7 @@ public class UserController {
 
     public boolean updateUser() {
         User user = new User();
-        System.out.println("Введите Вашу фамилию: ");
+        System.out.println("Input first name: ");
         Scanner scanner = new Scanner(System.in);
         user.setFirstName(scanner.nextLine());
         return true;
