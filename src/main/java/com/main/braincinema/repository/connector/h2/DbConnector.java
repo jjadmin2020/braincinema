@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class DbConnector {
-    private static final String  DB_URL = "jdbc:h2:mem:brain_cinema_db";
+    private static final String  DB_URL = "jdbc:h2:mem:brain_cinema_db;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE";
     private static final String  USER = "admin";
     private static final String  PASSWORD = "admin";
 
