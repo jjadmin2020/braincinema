@@ -1,6 +1,5 @@
 package com.main.braincinema;
 
-import com.main.braincinema.controller.NewsController;
 import com.main.braincinema.controller.SeatController;
 import com.main.braincinema.entity.Seat;
 import com.main.braincinema.entity.*;
@@ -20,10 +19,5 @@ public class Main {
         System.out.println("Amount of free seats: = " + auditorium.freeSeats());
         System.out.println("Amount of occupied seats: = " + auditorium.occupiedSeats());
 
-
-
-        System.out.println();
-        NewsController one = new NewsController();
-        one.createNews();
     }
 }

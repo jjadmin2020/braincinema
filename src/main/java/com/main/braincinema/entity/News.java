@@ -21,29 +21,4 @@ public class News {
         this.latestNews = latestNews;
     }
 
-    public String getNewsTitle(String s) { return this.newsTitle; }
-
-    public String getNewsText() { return this.newsText; }
-
-    public String getNewsImageUrl() { return this.newsImageUrl; }
-
-    public String getNewsTags() { return this.newsTags; }
-
-    public boolean isLatestNews() { return this.latestNews; }
-
-    public String getNewsLink() { return this.newsLink; }
-
-    public String getNewsVideoUrl() { return this.newsVideoUrl; }
-
-    @Override
-    public String toString()
-    {
-        return String.format("%s\n %s\n %s\n %s\n %b",
-                this.getNewsTitle(),
-                this.getNewsImageUrl(),
-                this.getNewsText(),
-                this.getNewsTags(),
-                this.isLatestNews());
-    }
-
 }
