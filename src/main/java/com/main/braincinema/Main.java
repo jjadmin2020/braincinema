@@ -1,5 +1,6 @@
 package com.main.braincinema;
 
+import com.main.braincinema.controller.FilmController;
 import com.main.braincinema.controller.SeatController;
 import com.main.braincinema.entity.Seat;
 import com.main.braincinema.entity.*;
@@ -9,14 +10,19 @@ import com.main.braincinema.entity.*;
  */
 public class Main {
     public static void main(String[] args) {
-        Auditorium auditorium = new Auditorium("2", 7, 7);
-        SeatController seatController = new SeatController();
-        auditorium.generateSeats(auditorium.getRanks(),auditorium.getPlacesInRank());
-        auditorium.setOccupiedSeat(1001);
-        auditorium.getSeats().get(7007).setType("Vip");
-        System.out.println(auditorium.getSeats().get(1001));
-        System.out.println(auditorium.getSeats().get(7007));
-        System.out.println("Amount of free seats: = " + auditorium.freeSeats());
-        System.out.println("Amount of occupied seats: = " + auditorium.occupiedSeats());
+      //  Auditorium auditorium = new Auditorium("2", 7, 7);
+        //SeatController seatController = new SeatController();
+       // auditorium.generateSeats(auditorium.getRanks(),auditorium.getPlacesInRank());
+       // auditorium.setOccupiedSeat(1001);
+       // auditorium.getSeats().get(7007).setType("Vip");
+       // System.out.println(auditorium.getSeats().get(1001));
+       // System.out.println(auditorium.getSeats().get(7007));
+       // System.out.println("Amount of free seats: = " + auditorium.freeSeats());
+       // System.out.println("Amount of occupied seats: = " + auditorium.occupiedSeats());
+        FilmController filmController=new FilmController();
+        filmController.AddFilmInfo();
+        filmController.ShowFilmInfo();
+        filmController.UpdateFilm();
+        filmController.ShowFilmInfo();
     }
 }
