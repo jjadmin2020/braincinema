@@ -10,6 +10,9 @@ import java.util.Scanner;
 public class UserController {
     UserRepository repository = new H2UserRepositoryImpl();
 
+    public UserController(UserRepository h2) {
+    }
+
     public boolean addUser() {
         User user = new User();
         System.out.println("input user name: ");
