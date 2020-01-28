@@ -11,12 +11,12 @@ import java.sql.*;
  */
 public class H2UserRepositoryImpl implements UserRepository {
     private static final String INSERT_USERS_SQL = "INSERT INTO USERS" +
-            "  (id, firstName, lastName, dateOfBirth) VALUES " +
-            " (?, ?, ?, ?, ?);";
+            "  (id, firstName, lastName, dateOfBirth, city) VALUES " +
+            " (?, ?, ?, ?, ?, ?);";
 
     private static final String SELECT_USER = "SELECT * from USERS where id = ?" +
-            "  (id, firstName, lastName, dateOfBirth) VALUES " +
-            " (?, ?, ?, ?, ?);";
+            "  (id, firstName, lastName, dateOfBirth, city) VALUES " +
+            " (?, ?, ?, ?, ?, ?, ?);";
 
     @Override
     public User createUser(User user) {
@@ -27,6 +27,7 @@ public class H2UserRepositoryImpl implements UserRepository {
             preparedStatement.setString(2, user.getFirstName());
             preparedStatement.setString(3, user.getLastName());
             preparedStatement.setDate(4, new Date(user.getDateOfBirth().getTime()));
+            preparedStatement.setDate(5, Date.valueOf(user.getCity()));
 
             System.out.println(preparedStatement);
 
@@ -61,7 +62,8 @@ public class H2UserRepositoryImpl implements UserRepository {
             while (rs.next()) {
                 user.setFirstName(rs.getString("firstName"));
                 user.setLastName(rs.getString("lastName"));
-                user.setDateOfBirth(rs.getDate("dateOfBirth"));
+                user.setDateOfBirth(rs.getString("dateOfBirth"));
+                //user.setCity(rs.getString("city"));
             }
 
         } catch(SQLException e) {

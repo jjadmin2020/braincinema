@@ -12,6 +12,9 @@ public class Connector {
     private static String dbName = "braincinema";
     private static String dbUsername = "sa";
     private static String dbPassword = "";
+   //private static String dbCity;
+   //private static int dbPhoneNumber;
+    // private static String dbEMail;
 
     public static Connection getConnection() {
         Connection connection = null;

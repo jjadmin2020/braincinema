@@ -11,8 +11,9 @@ public class Main {
         H2Utils.initializeDb();
         UserController controller = new UserController();
         controller.addUser();
-        controller.addUser();
-        controller.addUser();
-        controller.findUser();
+        controller.updateUser();
+        controller.ShowUserInfo();
+
+
     }
 }

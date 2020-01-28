@@ -13,8 +13,12 @@ import java.sql.Statement;
  */
 
 public class H2Utils {
-    private static final String createUserTableSQL = "create table USERS (\r\n" + "  id  BIGINT NOT NULL AUTO_INCREMENT,\r\n" +
-            "  firstName varchar(20),\r\n" + "  lastName varchar(20),\r\n" + "  dateOfBirth date,\r\n" + " PRIMARY KEY (UserID));";
+    private static final String createUserTableSQL = "create table USERS (\r\n"
+            + "  id  BIGINT NOT NULL AUTO_INCREMENT,\r\n"
+            + "  firstName varchar(20),\r\n"
+            + "  lastName varchar(20),\r\n"
+            + "  dateOfBirth date,\r\n"
+            + "  PRIMARY KEY (UserID));";
 
     public static boolean initializeDb() {
         try(Connection connection = Connector.getConnection();
