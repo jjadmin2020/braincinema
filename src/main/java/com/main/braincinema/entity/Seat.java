@@ -7,7 +7,7 @@ public class Seat {
 
     private User user;
     private String type;
-    private int unicNumber;
+    private int id;
     private final int rank;
     private final int number;
     private double cost;
@@ -20,7 +20,7 @@ public class Seat {
         this.number = number;
         this.cost = cost;
         this.type = type;
-        this.unicNumber = this.rank * 1000 + this.number;
+        this.id = this.rank * 1000 + this.number;
     }
 
 }

@@ -1,60 +1,40 @@
 package com.main.braincinema.controller;
 
 import com.main.braincinema.entity.Auditorium;
-import com.main.braincinema.entity.Seat;
+import com.main.braincinema.repository.AuditoriumRepository;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.Scanner;
 
 public class AuditoriumController {
 
-    Auditorium auditorium;
+    private final AuditoriumRepository repository;
 
-    public AuditoriumController(Auditorium auditorium){
-        if(!check(auditorium.getRanks(),auditorium.getPlacesInRank())){
-            throw new IllegalArgumentException("Make a sufficient number of places/ranks");
-        }
-        this.auditorium = auditorium;
-        auditorium.setSeats(new HashMap(auditorium.getRanks()*auditorium.getPlacesInRank()));
+    public AuditoriumController(AuditoriumRepository repository){
+        this.repository = repository;
     }
 
-    public boolean check(int ranks,int placesInRank){
-        return ranks>0&&ranks<17&&placesInRank>0&&placesInRank<25;
+    public boolean addAuditorium(){
+        Auditorium auditorium = new Auditorium();
+        System.out.println("Input Auditorium name: ");
+        Scanner scanner = new Scanner(System.in);
+        auditorium.setName(scanner.nextLine());
+        System.out.println("Input Auditorium ranks: ");
+        auditorium.setRanks(scanner.nextInt());
+        System.out.println("Input Auditorium places in rank: ");
+        auditorium.setPlacesInRank(scanner.nextInt());
+        repository.createAuditorium(auditorium);
+        return true;
     }
 
-    public void generateSeats(int ranks,int placesInRank){
-        for(int i = 1; i <= ranks;i++){
-            for(int j = 1; j <= placesInRank;j++){
-                Seat seat = new Seat(i,j,50.0,"ordinary");
-                seat.setUnicNumber(i*1000+j);
-                auditorium.getSeats().put(seat.getUnicNumber(),seat);
-            }
-        }
+    public boolean deleteAuditorium(){
+        return true;
     }
 
-    public void setOccupiedSeat(int unicNumber){
-        auditorium.getSeats().get(unicNumber).setOccupied(true);
+    public boolean getAuditorium(){
+        return true;
     }
 
-    public int checkFreeSeats() {
-        for (Map.Entry<Integer,Seat> seats : auditorium.getSeats().entrySet()){
-            if(seats.getValue().isOccupied()== false){
-                auditorium.setFreeSeats(auditorium.getFreeSeats()+1);
-            }
-        }
-        return auditorium.getFreeSeats();
-    }
-
-    public int checkOccupiedSeats() {
-        for (Map.Entry<Integer,Seat> seats : auditorium.getSeats().entrySet()){
-            if(seats.getValue().isOccupied()== true){
-                auditorium.setOccupiedSeats(auditorium.getOccupiedSeats()+1);
-            }
-        }
-        return auditorium.getOccupiedSeats();
-    }
-
-    private int checkSize() {
-        return auditorium.getSeats().size();
+    public boolean updateAuditorium(){
+        return true;
     }
 }
