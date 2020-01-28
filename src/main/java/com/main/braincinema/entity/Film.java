@@ -2,13 +2,13 @@ package com.main.braincinema.entity;
 import lombok.Data;
 @Data
 public class Film {
-    private int FilmId;
-    private String Title;
-    private String Genre;
-    private String Country;
-    private int Year;
+    private int filmId;
+    private String title;
+    private String genre;
+    private String country;
+    private int year;
     public Film(){}
-    public Film(int filmId){
-        this.FilmId=filmId;
+    public Film(int FilmId){
+        this.filmId=FilmId;
     }
 }

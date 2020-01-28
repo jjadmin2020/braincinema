@@ -2,16 +2,18 @@ package com.main.braincinema.controller;
 
 import com.main.braincinema.entity.Film;
 import com.main.braincinema.entity.FilmComments;
+import com.main.braincinema.repository.FilmRepository;
+import com.main.braincinema.repository.impl.H2FilmRepositoryImpl;
 
 
 import java.util.Scanner;
 
 public class FilmController {
-    private Film film = new Film();
-    private FilmComments filmComments = new FilmComments();
-
+   // private Film film = new Film();
+   // private FilmComments filmComments = new FilmComments();
+FilmRepository filmRepository =new H2FilmRepositoryImpl();
     public boolean AddFilmInfo() {
-
+Film film=new Film();
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Введите название фильма:");
@@ -22,16 +24,20 @@ public class FilmController {
         film.setCountry(sc.nextLine());
         System.out.println("Введите год фильма:");
         film.setYear(sc.nextInt());
+        filmRepository.addFilm(film);
         return true;
     }
 
     public boolean ShowFilmInfo() {
+        Film film=new Film();
 
         System.out.println(film.toString());
         return true;
     }
 
     public boolean UpdateFilm() {
+        Film film=new Film();
+
         int z = 5;
 
        while (z!=0){
@@ -74,7 +80,7 @@ public class FilmController {
     }
 
     public boolean AddComent() {
-
+FilmComments filmComments=new FilmComments();
         System.out.println("Введите комментарий:");
         Scanner sc = new Scanner(System.in);
         filmComments.setComment(sc.nextLine());
@@ -83,6 +89,7 @@ public class FilmController {
     }
 
     public boolean ChangeComent() {
+        FilmComments filmComments=new FilmComments();
 
         System.out.println("Изменить комментарий:");
         Scanner sc = new Scanner(System.in);
