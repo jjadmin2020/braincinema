@@ -14,16 +14,14 @@ public class Ticket {
     private int row;
     private int place;
     private BigDecimal cost;
-    private Auditorium auditorium;
-    private Seat seat;
 
-    public Ticket(String filmName, String date, String time) {
-        this.filmName = filmName;
-        this.date = date;
-        this.time = time;
-        this.hall = auditorium.getName();
-        this.row = auditorium.getRanks();
-        this.place = auditorium.getPlacesInRank();
-        this.cost = BigDecimal.valueOf(seat.getCost());
-    }
+//    public Ticket(String filmName, String date, String time, String hall, int row, int place, BigDecimal cost) {
+//        this.filmName = filmName;
+//        this.date = date;
+//        this.time = time;
+//        this.hall = hall;
+//        this.row = row;
+//        this.place = place;
+//        this.cost = cost;
+//    }
 }
