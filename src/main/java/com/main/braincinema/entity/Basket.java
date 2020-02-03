@@ -2,22 +2,14 @@ package com.main.braincinema.entity;
 
 import lombok.Data;
 
-import java.math.BigDecimal;
+import java.util.ArrayList;
 
 @Data
 public class Basket {
-
     private long id;
-    private String filmName;
-    private int ranks;
-    private int placeInRank;
-    private BigDecimal cost;
-    private BigDecimal totalCost;
+    private ArrayList<Ticket> tickets;
 
-    public Basket(String filmName, int ranks, int placeInRank, BigDecimal cost) {
-        this.filmName = filmName;
-        this.ranks = ranks;
-        this.placeInRank = placeInRank;
-        this.cost = cost;
+    public Basket(Ticket ticket) {
+        tickets.add(ticket);
     }
 }
