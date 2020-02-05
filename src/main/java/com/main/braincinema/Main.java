@@ -1,22 +1,39 @@
 package com.main.braincinema;
 
-import com.main.braincinema.controller.SeatController;
-import com.main.braincinema.entity.Seat;
-import com.main.braincinema.entity.*;
+import com.main.braincinema.controller.TicketController;
+import com.main.braincinema.repository.RepositoryFactory;
+import com.main.braincinema.repository.utils.MySqlDbUtils;
+
+import java.util.Scanner;
 
 /**
  * Created by OFedorenko on 01/16/20 braincinema.
  */
 public class Main {
     public static void main(String[] args) {
-        Auditorium auditorium = new Auditorium("2", 7, 7);
-        SeatController seatController = new SeatController();
-        auditorium.generateSeats(auditorium.getRanks(),auditorium.getPlacesInRank());
-        auditorium.setOccupiedSeat(1001);
-        auditorium.getSeats().get(7007).setType("Vip");
-        System.out.println(auditorium.getSeats().get(1001));
-        System.out.println(auditorium.getSeats().get(7007));
-        System.out.println("Amount of free seats: = " + auditorium.freeSeats());
-        System.out.println("Amount of occupied seats: = " + auditorium.occupiedSeats());
+        MySqlDbUtils.initDB();
+
+        TicketController controller = new TicketController(RepositoryFactory.getTicketRepository("MySql"));
+        int result = Integer.MAX_VALUE;
+        while (result != 0) {
+            System.out.println("Do you want to dd ticket?");
+            System.out.println("press 1 add ticket");
+            System.out.println("press 2 show all ticket");
+            System.out.println("press 3 find ticket by id");
+            System.out.println("press 4 remove ticket by id");
+            System.out.println("press 0 exit");
+            Scanner scan = new Scanner(System.in);
+            result = scan.nextInt();
+            if (result == 1) {
+                controller.addTicket();
+            } else if (result == 2) {
+                controller.showAllTicket();
+            } else if (result == 3) {
+                controller.findTicket();
+            } else if (result == 4) {
+                controller.removeTicket();
+            }
+        }
+
     }
 }
